@@ -1,0 +1,57 @@
+<html>
+    <head>
+       <title>Employee list</title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
+       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+       <script type="text/javascript" src="jquery.jOrgChart.js"></script>
+          <script src="list.js" type="text/javascript"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <link rel="stylesheet" href="jquery.jOrgChart.css"/>
+
+<style>
+button {
+  margin-top :10px;
+  margin-left:10px;
+}
+
+
+
+</style>
+<script>
+$(document).ready(function() {
+      $("#org").jOrgChart();
+
+
+  });
+</script>
+
+    </head>
+    <body>
+            <button id="bt1" type="button" class="btn btn-default" >Show employee</button>
+            <button id="show" type="button" class="btn btn-default">Show Hierarchy</button>
+   <button id='add' type="button"  class="btn btn-default">Add Employee</button>
+   <button id='tree' type="button"  class="btn btn-default">Employee Tree</button>
+
+           <br/>
+           <br/>
+            <ul id="org" style="display:none">
+           <% for(var i=0;i<data.length;i++){
+           createTree(data[i]);
+           }
+           %>
+         </ul>
+           <% function createTree(data){ %>
+
+           <li  id="<%= data.empid %>">
+            <%= data.name %> [<%= data.designation %>]
+           <% if(data.children.length>0){ %>
+             <ul>
+              <%   for(var j=0;j<data.children.length;j++){
+                createTree(data.children[j]);
+              }%>
+            </ul>
+          <%  }%></li>
+        <%  }
+           %>
+    </body>
+</html>

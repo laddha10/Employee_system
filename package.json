@@ -1,0 +1,23 @@
+{
+  "name": "employee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "me",
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.17.2",
+    "bootstrap": "^4.3.1",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "jquery": "^3.3.1",
+    "mongoose": "^4.11.9",
+    "parser": "^0.1.4",
+    "table-export": "^1.0.2",
+    "tableexport": "^5.2.0"
+  }
+}
